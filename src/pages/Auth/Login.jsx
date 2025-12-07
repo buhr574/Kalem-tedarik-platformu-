@@ -1,61 +1,61 @@
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useAuth } from '../../context/AuthContext'
-import Input from '../../components/ui/Input'
-import Button from '../../components/ui/Button'
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import Input from "../../components/ui/Input";
+import Button from "../../components/ui/Button";
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  })
-  const [errors, setErrors] = useState({})
-  const [isLoading, setIsLoading] = useState(false)
-  const { login } = useAuth()
-  const navigate = useNavigate()
+    email: "",
+    password: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
+    }));
     if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }))
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
-  }
+  };
 
   const validate = () => {
-    const newErrors = {}
+    const newErrors = {};
 
     if (!formData.email.trim()) {
-      newErrors.email = 'E-posta gereklidir'
+      newErrors.email = "E-posta gereklidir";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Geçersiz e-posta formatı'
+      newErrors.email = "Geçersiz e-posta formatı";
     }
 
     if (!formData.password) {
-      newErrors.password = 'Şifre gereklidir'
+      newErrors.password = "Şifre gereklidir";
     }
 
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    if (!validate()) return
+    e.preventDefault();
+    if (!validate()) return;
 
-    setIsLoading(true)
-    const result = await login(formData.email, formData.password)
-    setIsLoading(false)
+    setIsLoading(true);
+    const result = await login(formData.email, formData.password);
+    setIsLoading(false);
 
     if (result.success) {
-      navigate('/panel/teklifler')
+      navigate("/panel/teklifler");
     } else {
-      setErrors({ submit: result.error || 'Giriş başarısız' })
+      setErrors({ submit: result.error || "Giriş başarısız" });
     }
-  }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
@@ -106,13 +106,16 @@ const Login = () => {
             className="w-full"
             disabled={isLoading}
           >
-            {isLoading ? 'Giriş yapılıyor...' : 'Giriş Yap'}
+            {isLoading ? "Giriş yapılıyor..." : "Giriş Yap"}
           </Button>
         </form>
 
         <p className="text-center text-gray-400 mt-6">
-          Hesabınız yok mu?{' '}
-          <Link to="/kayit" className="text-purple-400 hover:text-purple-300 font-medium">
+          Hesabınız yok mu?{" "}
+          <Link
+            to="/kayit"
+            className="text-blue-400 hover:text-blue-300 font-medium"
+          >
             Kayıt Ol
           </Link>
         </p>
@@ -124,8 +127,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
-
+export default Login;

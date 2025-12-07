@@ -138,13 +138,11 @@ const OfferList = () => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-400 text-sm">Toplam Kalem</p>
-              <p className="text-2xl font-bold text-purple-400">
-                {stats.total}
-              </p>
+              <p className="text-2xl font-bold text-blue-400">{stats.total}</p>
             </div>
-            <div className="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center border border-purple-500/30">
+            <div className="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
               <svg
-                className="w-6 h-6 text-purple-400"
+                className="w-6 h-6 text-blue-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

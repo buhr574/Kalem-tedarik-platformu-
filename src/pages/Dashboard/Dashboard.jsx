@@ -121,14 +121,14 @@ const Dashboard = () => {
         <Card>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 text-sm mb-1">Toplam Teklif</p>
-              <p className="text-3xl font-bold text-white">
+              <p className="text-gray-400 text-sm">Toplam Teklif</p>
+              <p className="text-2xl font-bold text-white">
                 {stats.totalOffers}
               </p>
             </div>
-            <div className="w-14 h-14 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
+            <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
               <svg
-                className="w-7 h-7 text-blue-400"
+                className="w-5 h-5 text-blue-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -146,14 +146,14 @@ const Dashboard = () => {
         <Card>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 text-sm mb-1">Bekleyen</p>
-              <p className="text-3xl font-bold text-yellow-400">
+              <p className="text-gray-400 text-sm">Bekleyen</p>
+              <p className="text-2xl font-bold text-yellow-400">
                 {stats.pending}
               </p>
             </div>
-            <div className="w-14 h-14 rounded-lg bg-yellow-500/20 flex items-center justify-center border border-yellow-500/30">
+            <div className="w-10 h-10 rounded-lg bg-yellow-500/20 flex items-center justify-center border border-yellow-500/30">
               <svg
-                className="w-7 h-7 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -171,14 +171,14 @@ const Dashboard = () => {
         <Card>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 text-sm mb-1">Onaylanan</p>
-              <p className="text-3xl font-bold text-green-400">
+              <p className="text-gray-400 text-sm">Onaylanan</p>
+              <p className="text-2xl font-bold text-green-400">
                 {stats.approved}
               </p>
             </div>
-            <div className="w-14 h-14 rounded-lg bg-green-500/20 flex items-center justify-center border border-green-500/30">
+            <div className="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center border border-green-500/30">
               <svg
-                className="w-7 h-7 text-green-400"
+                className="w-5 h-5 text-green-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -196,14 +196,14 @@ const Dashboard = () => {
         <Card>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 text-sm mb-1">Toplam Kalem</p>
-              <p className="text-3xl font-bold text-purple-400">
+              <p className="text-gray-400 text-sm">Toplam Kalem</p>
+              <p className="text-2xl font-bold text-blue-400">
                 {stats.totalItems}
               </p>
             </div>
-            <div className="w-14 h-14 rounded-lg bg-purple-500/20 flex items-center justify-center border border-purple-500/30">
+            <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
               <svg
-                className="w-7 h-7 text-purple-400"
+                className="w-5 h-5 text-blue-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -223,66 +223,80 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Teklif Durum Analizi */}
         <Card>
-          <h2 className="text-xl font-semibold text-white mb-4">
+          <h2 className="text-xl font-semibold text-white mb-6">
             Teklif Durum Analizi
           </h2>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-4 h-4 bg-yellow-500 rounded"></div>
-                <span className="text-gray-300">Bekleyen</span>
-              </div>
-              <span className="text-white font-semibold">{stats.pending}</span>
-            </div>
-            <div className="w-full bg-gray-700 rounded-full h-3">
-              <div
-                className="bg-yellow-500 h-3 rounded-full transition-all duration-500"
-                style={{
-                  width: `${
-                    stats.totalOffers > 0
-                      ? (stats.pending / stats.totalOffers) * 100
-                      : 0
-                  }%`,
-                }}
-              ></div>
+          <div className="flex items-end gap-6 h-48">
+            {/* Y-axis labels */}
+            <div className="flex flex-col justify-between h-full pb-8 pr-2">
+              {[4, 3, 2, 1, 0].map((num) => (
+                <span key={num} className="text-gray-400 text-xs font-medium">
+                  {num}
+                </span>
+              ))}
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-4 h-4 bg-green-500 rounded"></div>
-                <span className="text-gray-300">Onaylanan</span>
+            {/* Chart area */}
+            <div className="flex-1 flex items-end justify-between gap-4 h-full">
+              {/* Bekleyen Bar */}
+              <div className="flex flex-col items-center gap-3 flex-1 max-w-[80px]">
+                <div
+                  className="relative w-full flex items-end"
+                  style={{ height: "160px" }}
+                >
+                  <div
+                    className="w-full bg-yellow-500 rounded-t transition-all duration-500"
+                    style={{
+                      height: `${Math.min((stats.pending / 4) * 100, 100)}%`,
+                      minHeight: stats.pending > 0 ? "4px" : "0",
+                    }}
+                  ></div>
+                </div>
+                <span className="text-gray-300 text-sm font-medium">
+                  Bekleyen
+                </span>
               </div>
-              <span className="text-white font-semibold">{stats.approved}</span>
-            </div>
-            <div className="w-full bg-gray-700 rounded-full h-3">
-              <div
-                className="bg-green-500 h-3 rounded-full transition-all duration-500"
-                style={{
-                  width: `${
-                    stats.totalOffers > 0
-                      ? (stats.approved / stats.totalOffers) * 100
-                      : 0
-                  }%`,
-                }}
-              ></div>
-            </div>
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-4 h-4 bg-blue-500 rounded"></div>
-                <span className="text-gray-300">Toplam</span>
+              {/* Onaylanan Bar */}
+              <div className="flex flex-col items-center gap-3 flex-1 max-w-[80px]">
+                <div
+                  className="relative w-full flex items-end"
+                  style={{ height: "160px" }}
+                >
+                  <div
+                    className="w-full bg-green-500 rounded-t transition-all duration-500"
+                    style={{
+                      height: `${Math.min((stats.approved / 4) * 100, 100)}%`,
+                      minHeight: stats.approved > 0 ? "4px" : "0",
+                    }}
+                  ></div>
+                </div>
+                <span className="text-gray-300 text-sm font-medium">
+                  Onaylanan
+                </span>
               </div>
-              <span className="text-white font-semibold">
-                {stats.totalOffers}
-              </span>
-            </div>
-            <div className="w-full bg-gray-700 rounded-full h-3">
-              <div
-                className="bg-blue-500 h-3 rounded-full transition-all duration-500"
-                style={{
-                  width: "100%",
-                }}
-              ></div>
+
+              {/* Toplam Bar */}
+              <div className="flex flex-col items-center gap-3 flex-1 max-w-[80px]">
+                <div
+                  className="relative w-full flex items-end"
+                  style={{ height: "160px" }}
+                >
+                  <div
+                    className="w-full bg-blue-500 rounded-t transition-all duration-500"
+                    style={{
+                      height: `${Math.min(
+                        (stats.totalOffers / 4) * 100,
+                        100
+                      )}%`,
+                      minHeight: stats.totalOffers > 0 ? "4px" : "0",
+                    }}
+                  ></div>
+                </div>
+                <span className="text-gray-300 text-sm font-medium">
+                  Toplam
+                </span>
+              </div>
             </div>
           </div>
         </Card>

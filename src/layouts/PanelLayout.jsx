@@ -134,7 +134,7 @@ const PanelLayout = () => {
 
           <div className="border-t border-white/20 pt-4 mt-4">
             <div className="flex items-center gap-3 mb-4 px-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-semibold">
+              <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-semibold border border-blue-500/30">
                 {user?.fullName?.charAt(0) || "U"}
               </div>
               <div className="flex-1 min-w-0">

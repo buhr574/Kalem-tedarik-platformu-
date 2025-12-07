@@ -13,12 +13,14 @@ const Button = ({
 
   const variants = {
     primary:
-      "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl",
-    secondary: "glass-button text-white border border-white/30",
-    danger: "bg-red-600 text-white hover:bg-red-700 shadow-lg hover:shadow-xl",
+      "bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl border border-blue-500/30",
+    secondary:
+      "glass-button text-white border border-white/20 hover:border-white/30",
+    danger:
+      "bg-red-600 text-white hover:bg-red-700 shadow-lg hover:shadow-xl border border-red-500/30",
     success:
-      "bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl",
-    ghost: "text-white hover:bg-white/10",
+      "bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl border border-green-500/30",
+    ghost: "text-gray-300 hover:text-white hover:bg-white/5",
   };
 
   const sizes = {

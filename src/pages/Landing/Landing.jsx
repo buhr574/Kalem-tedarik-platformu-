@@ -4,14 +4,11 @@ import Button from "../../components/ui/Button";
 const Landing = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-slate-900/50 to-blue-900/50" />
-
       {/* Content */}
       <div className="relative z-10 max-w-6xl w-full">
         {/* Tagline */}
         <div className="flex justify-center mb-6">
-          <div className="glass px-4 py-2 rounded-full border border-purple-500/30 flex items-center gap-2">
+          <div className="glass px-4 py-2 rounded-full border border-blue-500/30 flex items-center gap-2">
             <svg
               className="w-4 h-4 text-yellow-400"
               fill="currentColor"
@@ -59,7 +56,7 @@ const Landing = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
           <div className="glass-card text-center">
             <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 flex items-center justify-center border border-yellow-400/30">
+              <div className="w-16 h-16 rounded-lg bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20">
                 <svg
                   className="w-8 h-8 text-yellow-400"
                   fill="none"
@@ -78,7 +75,7 @@ const Landing = () => {
             <h3 className="text-xl font-semibold text-white mb-2">
               Hızlı Teklif
             </h3>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-400 text-sm leading-relaxed">
               Saniyeler içinde yeni alım talebi oluşturun ve tedarikçilerden
               teklif bekleyin.
             </p>
@@ -86,7 +83,7 @@ const Landing = () => {
 
           <div className="glass-card text-center">
             <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400/20 to-green-600/20 flex items-center justify-center border border-green-400/30">
+              <div className="w-16 h-16 rounded-lg bg-green-500/10 flex items-center justify-center border border-green-500/20">
                 <svg
                   className="w-8 h-8 text-green-400"
                   fill="none"
@@ -105,7 +102,7 @@ const Landing = () => {
             <h3 className="text-xl font-semibold text-white mb-2">
               Güvenli Onay
             </h3>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-400 text-sm leading-relaxed">
               Gelen teklifleri inceleyin, karşılaştırın ve tek tıkla güvenle
               onaylayın veya reddedin.
             </p>
@@ -113,7 +110,7 @@ const Landing = () => {
 
           <div className="glass-card text-center">
             <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400/20 to-blue-600/20 flex items-center justify-center border border-blue-400/30">
+              <div className="w-16 h-16 rounded-lg bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
                 <svg
                   className="w-8 h-8 text-blue-400"
                   fill="none"
@@ -132,7 +129,7 @@ const Landing = () => {
             <h3 className="text-xl font-semibold text-white mb-2">
               Global Erişim
             </h3>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-400 text-sm leading-relaxed">
               Farklı para birimleri ve birim türleri ile uluslararası
               standartlarda çalışın.
             </p>

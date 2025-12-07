@@ -106,9 +106,9 @@ const ItemList = () => {
       {items.length === 0 ? (
         <div className="glass-card text-center py-12">
           <div className="flex justify-center mb-4">
-            <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/30">
+            <div className="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
               <svg
-                className="w-8 h-8 text-purple-400"
+                className="w-8 h-8 text-blue-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

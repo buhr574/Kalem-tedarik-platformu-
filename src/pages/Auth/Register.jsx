@@ -1,77 +1,77 @@
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useAuth } from '../../context/AuthContext'
-import Input from '../../components/ui/Input'
-import Button from '../../components/ui/Button'
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import Input from "../../components/ui/Input";
+import Button from "../../components/ui/Button";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    password: '',
-    passwordConfirm: '',
-  })
-  const [errors, setErrors] = useState({})
-  const [isLoading, setIsLoading] = useState(false)
-  const { register } = useAuth()
-  const navigate = useNavigate()
+    fullName: "",
+    email: "",
+    password: "",
+    passwordConfirm: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const { register } = useAuth();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
+    }));
     if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }))
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
-  }
+  };
 
   const validate = () => {
-    const newErrors = {}
+    const newErrors = {};
 
     if (!formData.fullName.trim()) {
-      newErrors.fullName = 'Tam isim gereklidir'
+      newErrors.fullName = "Tam isim gereklidir";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'E-posta gereklidir'
+      newErrors.email = "E-posta gereklidir";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Geçersiz e-posta formatı'
+      newErrors.email = "Geçersiz e-posta formatı";
     }
 
     if (!formData.password) {
-      newErrors.password = 'Şifre gereklidir'
+      newErrors.password = "Şifre gereklidir";
     } else if (formData.password.length < 6) {
-      newErrors.password = 'Şifre en az 6 karakter olmalıdır'
+      newErrors.password = "Şifre en az 6 karakter olmalıdır";
     }
 
     if (formData.password !== formData.passwordConfirm) {
-      newErrors.passwordConfirm = 'Şifreler eşleşmiyor'
+      newErrors.passwordConfirm = "Şifreler eşleşmiyor";
     }
 
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    if (!validate()) return
+    e.preventDefault();
+    if (!validate()) return;
 
-    setIsLoading(true)
+    setIsLoading(true);
     const result = await register({
       fullName: formData.fullName,
       email: formData.email,
       password: formData.password,
-    })
-    setIsLoading(false)
+    });
+    setIsLoading(false);
 
     if (result.success) {
-      navigate('/panel/teklifler')
+      navigate("/panel/teklifler");
     } else {
-      setErrors({ submit: result.error || 'Kayıt başarısız' })
+      setErrors({ submit: result.error || "Kayıt başarısız" });
     }
-  }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
@@ -144,20 +144,22 @@ const Register = () => {
             className="w-full"
             disabled={isLoading}
           >
-            {isLoading ? 'Oluşturuluyor...' : 'Hesap Oluştur'}
+            {isLoading ? "Oluşturuluyor..." : "Hesap Oluştur"}
           </Button>
         </form>
 
         <p className="text-center text-gray-400 mt-6">
-          Zaten üye misiniz?{' '}
-          <Link to="/giris" className="text-purple-400 hover:text-purple-300 font-medium">
+          Zaten üye misiniz?{" "}
+          <Link
+            to="/giris"
+            className="text-blue-400 hover:text-blue-300 font-medium"
+          >
             Giriş Yap
           </Link>
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Register
-
+export default Register;
