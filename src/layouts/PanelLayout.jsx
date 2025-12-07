@@ -79,7 +79,7 @@ const PanelLayout = () => {
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex relative z-10">
       {/* Sidebar */}
       <aside
         className={`fixed md:static inset-y-0 left-0 z-40 w-64 glass-nav transform transition-transform duration-500 ease-in-out ${
