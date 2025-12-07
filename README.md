@@ -2,29 +2,29 @@
 
 Modern, kullanıcı dostu bir B2B tedarik ve teklif yönetim platformu. Şirketlerin alım kalemlerini yönetebileceği, teklif talepleri oluşturabileceği ve gelen teklifleri onaylayabileceği kapsamlı bir web uygulaması.
 
-## 🚀 Özellikler
+##  Özellikler
 
 ### Genel Özellikler
-- ✨ **Glassmorphism Tasarım**: Modern ve şık kullanıcı arayüzü
-- 📱 **Tam Responsive**: Mobil, tablet ve masaüstü uyumlu
-- 🎨 **Dark Theme**: Göz yormayan karanlık tema
-- ⚡ **Hızlı ve Performanslı**: Optimize edilmiş React yapısı
+-  **Glassmorphism Tasarım**: Modern ve şık kullanıcı arayüzü
+-  **Tam Responsive**: Mobil, tablet ve masaüstü uyumlu
+-  **Dark Theme**: Göz yormayan karanlık tema
+-  **Hızlı ve Performanslı**: Optimize edilmiş React yapısı
 
 ### Kullanıcı Özellikleri
-- 🔐 **Kimlik Doğrulama**: Güvenli giriş ve kayıt sistemi
-- 📊 **Dashboard**: Genel bakış ve istatistikler
-- 📋 **Teklif Yönetimi**: 
+-  **Kimlik Doğrulama**: Güvenli giriş ve kayıt sistemi
+-  **Dashboard**: Genel bakış ve istatistikler
+-  **Teklif Yönetimi**: 
   - Teklif listeleme ve filtreleme
   - Teklif detay görüntüleme
   - Yeni teklif talebi oluşturma
   - Teklif onaylama/reddetme
-- 📦 **Alım Kalemleri Yönetimi**:
+-  **Alım Kalemleri Yönetimi**:
   - Kalem listeleme
   - Yeni kalem ekleme
   - Kalem düzenleme
   - Kalem silme
 
-## 🛠️ Teknoloji Stack
+##  Teknoloji Stack
 
 - **React 18.2** - UI kütüphanesi
 - **Vite 5.0** - Build tool ve dev server
@@ -33,7 +33,7 @@ Modern, kullanıcı dostu bir B2B tedarik ve teklif yönetim platformu. Şirketl
 - **Context API** - State management
 - **Mock API** - Backend simülasyonu
 
-## 📁 Proje Yapısı
+##  Proje Yapısı
 
 ```
 src/
@@ -66,7 +66,7 @@ src/
 └── index.css           # Global stiller
 ```
 
-## 🚦 Kurulum ve Çalıştırma
+##  Kurulum ve Çalıştırma
 
 ### Gereksinimler
 - Node.js 16+ 
@@ -105,7 +105,7 @@ Build'i önizlemek için:
 npm run preview
 ```
 
-## 🎯 Kullanım
+##  Kullanım
 
 ### Demo Giriş Bilgileri
 - **E-posta:** demo@tedarik.com
@@ -129,7 +129,7 @@ npm run preview
 3. Formu doldurun
 4. "Oluştur" butonuna tıklayın
 
-## 🎨 Tasarım Sistemi
+##  Tasarım Sistemi
 
 ### Glassmorphism
 Proje, modern glassmorphism tasarım prensiplerini kullanır:
@@ -143,7 +143,7 @@ Proje, modern glassmorphism tasarım prensiplerini kullanır:
 - **Danger:** Kırmızı (#ef4444)
 - **Warning:** Sarı (#f59e0b)
 
-## 📝 Mock API
+##  Mock API
 
 Proje, gerçek bir backend olmadan çalışmak için mock API servisleri kullanır. Tüm veriler bellekte saklanır ve sayfa yenilendiğinde sıfırlanır.
 
@@ -152,25 +152,24 @@ Proje, gerçek bir backend olmadan çalışmak için mock API servisleri kullan�
 - `offers.js` - Teklif yönetimi
 - `items.js` - Alım kalemleri yönetimi
 
-## 🔒 Güvenlik
+##  Güvenlik
 
 - Form validasyonları
 - Protected routes
 - XSS koruması
 - Güvenli şifre gereksinimleri
 
-## 🚧 Geliştirme Notları
-
+##  Geliştirme Notları
 - Tüm state yönetimi Context API ile yapılmaktadır
 - Bileşenler Single Responsibility prensibine uygundur
 - Kod ESLint kurallarına uygundur
 - Performans optimizasyonları uygulanmıştır
 
-## 📄 Lisans
+## Lisans
 
 Bu proje test amaçlı geliştirilmiştir.
 
-## 👨‍💻 Geliştirici Notları
+##  Geliştirici Notları
 
 - Proje tamamen frontend odaklıdır
 - Backend entegrasyonu için API servisleri değiştirilebilir
