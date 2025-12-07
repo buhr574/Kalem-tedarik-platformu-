@@ -151,6 +151,23 @@
     animation: fade-in 0.8s ease-out;
   }
 
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    33% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    66% {
+      transform: translateY(10px) translateX(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
   .glass-button {
     @apply glass hover:bg-white/10 transition-all duration-300 px-6 py-3 font-medium;
     border-radius: 16px;

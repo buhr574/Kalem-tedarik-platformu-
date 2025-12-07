@@ -67,15 +67,36 @@ const Register = () => {
     setIsLoading(false);
 
     if (result.success) {
-      navigate("/panel/teklifler");
+      navigate("/panel");
     } else {
       setErrors({ submit: result.error || "Kayıt başarısız" });
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6">
-      <div className="glass-strong rounded-2xl p-8 w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl animate-float"></div>
+        <div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/2 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute top-3/4 left-1/3 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "0.5s" }}
+        ></div>
+        <div
+          className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "1.5s" }}
+        ></div>
+      </div>
+
+      <div className="relative z-10 glass-strong p-8 w-full max-w-md">
         <Link
           to="/"
           className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition-colors"
