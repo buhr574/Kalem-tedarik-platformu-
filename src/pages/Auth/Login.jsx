@@ -10,6 +10,7 @@ const Login = () => {
     password: "",
   });
   const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -20,18 +21,75 @@ const Login = () => {
       ...prev,
       [name]: value,
     }));
+
+    // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
+
+    // Real-time validation
+    if (touched[name]) {
+      validateField(name, value);
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    validateField(name, value);
+  };
+
+  const validateField = (name, value) => {
+    const newErrors = { ...errors };
+
+    switch (name) {
+      case "email":
+        if (!value.trim()) {
+          newErrors.email = "E-posta gereklidir";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          newErrors.email = "Geçerli bir e-posta adresi giriniz";
+        } else if (
+          !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
+        ) {
+          newErrors.email = "E-posta formatı geçersiz";
+        } else {
+          delete newErrors.email;
+        }
+        break;
+
+      case "password":
+        if (!value) {
+          newErrors.password = "Şifre gereklidir";
+        } else {
+          delete newErrors.password;
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    setErrors(newErrors);
   };
 
   const validate = () => {
     const newErrors = {};
 
+    // Mark all fields as touched
+    setTouched({
+      email: true,
+      password: true,
+    });
+
+    // Validate all fields
     if (!formData.email.trim()) {
       newErrors.email = "E-posta gereklidir";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Geçersiz e-posta formatı";
+      newErrors.email = "Geçerli bir e-posta adresi giriniz";
+    } else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)
+    ) {
+      newErrors.email = "E-posta formatı geçersiz";
     }
 
     if (!formData.password) {
@@ -93,27 +151,69 @@ const Login = () => {
         <p className="text-gray-400 mb-8">Hesabınıza giriş yapın</p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          <Input
-            label="E-posta"
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="ornek@sirket.com"
-            error={errors.email}
-            required
-          />
+          <div>
+            <Input
+              label="E-posta"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder="ornek@sirket.com"
+              error={touched.email ? errors.email : ""}
+              required
+            />
+            {touched.email && !errors.email && formData.email && (
+              <p className="mt-1 text-xs text-green-400 flex items-center gap-1">
+                <svg
+                  className="w-3 h-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Geçerli e-posta formatı
+              </p>
+            )}
+          </div>
 
-          <Input
-            label="Şifre"
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            placeholder="••••••••"
-            error={errors.password}
-            required
-          />
+          <div>
+            <Input
+              label="Şifre"
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder="••••••••"
+              error={touched.password ? errors.password : ""}
+              required
+            />
+            {touched.password && !errors.password && formData.password && (
+              <p className="mt-1 text-xs text-green-400 flex items-center gap-1">
+                <svg
+                  className="w-3 h-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Geçerli
+              </p>
+            )}
+          </div>
 
           {errors.submit && (
             <div className="bg-red-500/20 border border-red-500/50 text-red-300 px-4 py-3 rounded-lg text-sm">

@@ -2,13 +2,100 @@ import { Link } from "react-router-dom";
 import Button from "../../components/ui/Button";
 
 const Landing = () => {
+  // Network nodes positions
+  const nodes = [
+    { x: 10, y: 20, delay: 0 },
+    { x: 25, y: 15, delay: 0.5 },
+    { x: 40, y: 25, delay: 1 },
+    { x: 55, y: 18, delay: 1.5 },
+    { x: 70, y: 22, delay: 2 },
+    { x: 85, y: 16, delay: 2.5 },
+    { x: 15, y: 40, delay: 0.3 },
+    { x: 30, y: 45, delay: 0.8 },
+    { x: 50, y: 42, delay: 1.3 },
+    { x: 65, y: 48, delay: 1.8 },
+    { x: 80, y: 44, delay: 2.3 },
+    { x: 20, y: 60, delay: 0.6 },
+    { x: 35, y: 65, delay: 1.1 },
+    { x: 55, y: 62, delay: 1.6 },
+    { x: 75, y: 68, delay: 2.1 },
+    { x: 5, y: 50, delay: 0.2 },
+    { x: 90, y: 55, delay: 2.4 },
+    { x: 45, y: 8, delay: 0.4 },
+    { x: 12, y: 75, delay: 0.7 },
+    { x: 88, y: 75, delay: 2.6 },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Network Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        {/* SVG Network Lines */}
+        <svg className="absolute inset-0 w-full h-full opacity-40">
+          {nodes.map((node, i) => {
+            // Connect each node to nearby nodes
+            const connections = nodes
+              .slice(i + 1, i + 5)
+              .filter((_, idx) => idx < 3);
+            return connections.map((target, j) => {
+              const distance = Math.sqrt(
+                Math.pow(node.x - target.x, 2) + Math.pow(node.y - target.y, 2)
+              );
+              if (distance < 35) {
+                return (
+                  <line
+                    key={`${i}-${j}`}
+                    x1={`${node.x}%`}
+                    y1={`${node.y}%`}
+                    x2={`${target.x}%`}
+                    y2={`${target.y}%`}
+                    stroke="rgba(99, 102, 241, 0.4)"
+                    strokeWidth="0.5"
+                    className="animate-pulse"
+                    style={{
+                      animationDelay: `${node.delay}s`,
+                      animationDuration: "4s",
+                    }}
+                  />
+                );
+              }
+              return null;
+            });
+          })}
+        </svg>
+
+        {/* Glowing Dots */}
+        {nodes.map((node, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full animate-pulse"
+            style={{
+              left: `${node.x}%`,
+              top: `${node.y}%`,
+              width: "6px",
+              height: "6px",
+              transform: "translate(-50%, -50%)",
+              animationDelay: `${node.delay}s`,
+              animationDuration: "4s",
+              background: "rgba(99, 102, 241, 0.8)",
+              boxShadow:
+                "0 0 8px rgba(99, 102, 241, 0.8), " +
+                "0 0 16px rgba(99, 102, 241, 0.6), " +
+                "0 0 24px rgba(139, 92, 246, 0.4)",
+            }}
+          />
+        ))}
+
+        {/* Additional larger glowing dots */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl animate-float"></div>
+        <div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/2 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "2s" }}
+        ></div>
       </div>
 
       {/* Content */}
