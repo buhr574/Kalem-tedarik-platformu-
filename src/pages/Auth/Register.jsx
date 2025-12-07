@@ -1,0 +1,163 @@
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
+import Input from '../../components/ui/Input'
+import Button from '../../components/ui/Button'
+
+const Register = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    password: '',
+    passwordConfirm: '',
+  })
+  const [errors, setErrors] = useState({})
+  const [isLoading, setIsLoading] = useState(false)
+  const { register } = useAuth()
+  const navigate = useNavigate()
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: '' }))
+    }
+  }
+
+  const validate = () => {
+    const newErrors = {}
+
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Tam isim gereklidir'
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'E-posta gereklidir'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Geçersiz e-posta formatı'
+    }
+
+    if (!formData.password) {
+      newErrors.password = 'Şifre gereklidir'
+    } else if (formData.password.length < 6) {
+      newErrors.password = 'Şifre en az 6 karakter olmalıdır'
+    }
+
+    if (formData.password !== formData.passwordConfirm) {
+      newErrors.passwordConfirm = 'Şifreler eşleşmiyor'
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!validate()) return
+
+    setIsLoading(true)
+    const result = await register({
+      fullName: formData.fullName,
+      email: formData.email,
+      password: formData.password,
+    })
+    setIsLoading(false)
+
+    if (result.success) {
+      navigate('/panel/teklifler')
+    } else {
+      setErrors({ submit: result.error || 'Kayıt başarısız' })
+    }
+  }
+
+  return (
+    <div className="min-h-screen flex items-center justify-center p-6">
+      <div className="glass-strong rounded-2xl p-8 w-full max-w-md">
+        <Link
+          to="/"
+          className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition-colors"
+        >
+          <span className="mr-2">←</span>
+          <span>Geri</span>
+        </Link>
+
+        <h1 className="text-3xl font-bold text-white mb-2">Kayıt Ol</h1>
+        <p className="text-gray-400 mb-8">Yeni bir hesap oluşturun</p>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <Input
+            label="Tam İsim"
+            type="text"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleChange}
+            placeholder="Ad Soyad"
+            error={errors.fullName}
+            required
+          />
+
+          <Input
+            label="E-posta"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="ornek@sirket.com"
+            error={errors.email}
+            required
+          />
+
+          <Input
+            label="Şifre"
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="••••••••"
+            error={errors.password}
+            required
+          />
+
+          <Input
+            label="Şifre Tekrar"
+            type="password"
+            name="passwordConfirm"
+            value={formData.passwordConfirm}
+            onChange={handleChange}
+            placeholder="••••••••"
+            error={errors.passwordConfirm}
+            required
+          />
+
+          {errors.submit && (
+            <div className="bg-red-500/20 border border-red-500/50 text-red-300 px-4 py-3 rounded-lg text-sm">
+              {errors.submit}
+            </div>
+          )}
+
+          <Button
+            type="submit"
+            variant="primary"
+            className="w-full"
+            disabled={isLoading}
+          >
+            {isLoading ? 'Oluşturuluyor...' : 'Hesap Oluştur'}
+          </Button>
+        </form>
+
+        <p className="text-center text-gray-400 mt-6">
+          Zaten üye misiniz?{' '}
+          <Link to="/giris" className="text-purple-400 hover:text-purple-300 font-medium">
+            Giriş Yap
+          </Link>
+        </p>
+      </div>
+    </div>
+  )
+}
+
+export default Register
+
