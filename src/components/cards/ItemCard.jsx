@@ -3,7 +3,7 @@ import Button from "../ui/Button";
 
 const ItemCard = ({ item, onEdit, onDelete }) => {
   return (
-    <Card className="transition-all duration-500 ease-in-out">
+    <Card className="transition-all duration-500 ease-in-out hover:shadow-2xl">
       <div className="flex flex-col h-full">
         <div className="mb-4">
           <div className="relative mb-3">

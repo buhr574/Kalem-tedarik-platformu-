@@ -77,7 +77,7 @@ const OfferCard = ({ offer }) => {
   };
 
   return (
-    <Card className="transition-all duration-500 ease-in-out">
+    <Card className="transition-all duration-500 ease-in-out hover:shadow-2xl">
       <div className="flex flex-col md:flex-row gap-4">
         <div className="flex-shrink-0">
           <img

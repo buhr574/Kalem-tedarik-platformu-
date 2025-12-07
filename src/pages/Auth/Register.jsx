@@ -183,7 +183,7 @@ const Register = () => {
     setIsLoading(false);
 
     if (result.success) {
-      navigate("/panel");
+      navigate("/giris");
     } else {
       setErrors({ submit: result.error || "Kayıt başarısız" });
     }
@@ -212,7 +212,7 @@ const Register = () => {
         ></div>
       </div>
 
-      <div className="relative z-10 glass-strong p-8 w-full max-w-md">
+      <div className="relative z-10 glass-strong p-8 w-full max-w-md animate-scale-in">
         <Link
           to="/"
           className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition-colors"

@@ -148,9 +148,12 @@ const Landing = () => {
 
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
-          <div className="glass-strong text-center hover:scale-105 transition-transform duration-500">
+          <div
+            className="glass-strong text-center animate-slide-in-up"
+            style={{ animationDelay: "0.1s" }}
+          >
             <div className="flex justify-center mb-5">
-              <div className="w-20 h-20 rounded-2xl bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20">
+              <div className="w-20 h-20 rounded-2xl bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20 transition-all duration-500 hover:scale-110 hover:bg-yellow-500/15">
                 <svg
                   className="w-10 h-10 text-yellow-400"
                   fill="none"
@@ -173,9 +176,12 @@ const Landing = () => {
             </p>
           </div>
 
-          <div className="glass-strong text-center hover:scale-105 transition-transform duration-500">
+          <div
+            className="glass-strong text-center animate-slide-in-up"
+            style={{ animationDelay: "0.2s" }}
+          >
             <div className="flex justify-center mb-5">
-              <div className="w-20 h-20 rounded-2xl bg-green-500/10 flex items-center justify-center border border-green-500/20">
+              <div className="w-20 h-20 rounded-2xl bg-green-500/10 flex items-center justify-center border border-green-500/20 transition-all duration-500 hover:scale-110 hover:bg-green-500/15">
                 <svg
                   className="w-10 h-10 text-green-400"
                   fill="none"
@@ -198,9 +204,12 @@ const Landing = () => {
             </p>
           </div>
 
-          <div className="glass-strong text-center hover:scale-105 transition-transform duration-500">
+          <div
+            className="glass-strong text-center animate-slide-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
             <div className="flex justify-center mb-5">
-              <div className="w-20 h-20 rounded-2xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
+              <div className="w-20 h-20 rounded-2xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 transition-all duration-500 hover:scale-110 hover:bg-blue-500/15">
                 <svg
                   className="w-10 h-10 text-blue-400"
                   fill="none"

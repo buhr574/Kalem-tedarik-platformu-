@@ -1,35 +1,37 @@
-import { useEffect } from 'react'
-import Button from './Button'
+import { useEffect } from "react";
+import Button from "./Button";
 
-const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
+const Modal = ({ isOpen, onClose, title, children, size = "md" }) => {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen])
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   const sizes = {
-    sm: 'max-w-md',
-    md: 'max-w-2xl',
-    lg: 'max-w-4xl',
-    xl: 'max-w-6xl',
-  }
+    sm: "max-w-md",
+    md: "max-w-2xl",
+    lg: "max-w-4xl",
+    xl: "max-w-6xl",
+  };
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in"
       onClick={onClose}
+      style={{ animation: "fade-in 0.3s ease-out" }}
     >
       <div
-        className={`glass-strong rounded-xl ${sizes[size]} w-full max-h-[90vh] overflow-y-auto`}
+        className={`glass-strong rounded-xl ${sizes[size]} w-full max-h-[90vh] overflow-y-auto animate-scale-in`}
         onClick={(e) => e.stopPropagation()}
+        style={{ animation: "scale-in 0.4s cubic-bezier(0.4, 0, 0.2, 1)" }}
       >
         <div className="flex items-center justify-between p-6 border-b border-white/20">
           <h2 className="text-2xl font-bold text-white">{title}</h2>
@@ -43,8 +45,7 @@ const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
         <div className="p-6">{children}</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Modal
-
+export default Modal;
