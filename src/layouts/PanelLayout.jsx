@@ -225,14 +225,14 @@ const PanelLayout = () => {
           <nav className="flex-1 space-y-2">
             <Link
               to="/panel"
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 relative overflow-hidden group sidebar-link-light ${
                 location.pathname === "/panel"
-                  ? "bg-white/20 dark:bg-white/20 bg-blue-500/20 dark:bg-white/20 text-white dark:text-white text-gray-900 dark:text-white font-semibold"
-                  : "text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white"
+                  ? "bg-white/20 dark:bg-white/20 bg-blue-500/20 dark:bg-white/20 text-white dark:text-white text-gray-900 dark:text-white font-semibold sidebar-link-active"
+                  : "text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/20 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-blue-700 dark:hover:text-white"
               }`}
             >
               <svg
-                className="w-5 h-5"
+                className="w-5 h-5 relative z-10"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -244,21 +244,21 @@ const PanelLayout = () => {
                   d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
                 />
               </svg>
-              <span className="font-medium">Panel</span>
+              <span className="font-medium relative z-10">Panel</span>
             </Link>
 
             {menuItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 relative overflow-hidden group sidebar-link-light ${
                   isActive(item.path)
-                    ? "bg-white/20 dark:bg-white/20 bg-blue-500/20 dark:bg-white/20 text-white dark:text-white text-gray-900 dark:text-white font-semibold"
-                    : "text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white"
+                    ? "bg-white/20 dark:bg-white/20 bg-blue-500/20 dark:bg-white/20 text-white dark:text-white text-gray-900 dark:text-white font-semibold sidebar-link-active"
+                    : "text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/20 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-blue-700 dark:hover:text-white"
                 }`}
               >
                 {item.icon}
-                <span className="font-medium">{item.label}</span>
+                <span className="font-medium relative z-10">{item.label}</span>
               </Link>
             ))}
           </nav>
@@ -279,10 +279,10 @@ const PanelLayout = () => {
             </div>
             <button
               onClick={handleLogout}
-              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white transition-all duration-200"
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/20 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-blue-700 dark:hover:text-white transition-all duration-300 relative overflow-hidden group sidebar-link-light"
             >
-              <span>→</span>
-              <span className="font-medium">Çıkış Yap</span>
+              <span className="relative z-10">→</span>
+              <span className="font-medium relative z-10">Çıkış Yap</span>
             </button>
           </div>
         </div>

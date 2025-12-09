@@ -313,6 +313,191 @@
     opacity: 0;
   }
 
+  /* Sidebar link hover effects for light mode */
+  html[data-theme="light"]:not([data-public-page="true"]) .sidebar-link-light {
+    position: relative !important;
+  }
+
+  /* Active state - permanent hover effect for light mode */
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100% !important;
+    background: linear-gradient(
+      90deg,
+      rgba(99, 102, 241, 0.2) 0%,
+      rgba(99, 102, 241, 0.3) 50%,
+      rgba(99, 102, 241, 0.2) 100%
+    );
+    border-radius: 0.5rem;
+    z-index: 0;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(
+      180deg,
+      rgba(99, 102, 241, 0.9) 0%,
+      rgba(99, 102, 241, 1) 50%,
+      rgba(99, 102, 241, 0.9) 100%
+    );
+    border-radius: 0.5rem 0 0 0.5rem;
+    opacity: 1 !important;
+    transform: scaleY(1) !important;
+    z-index: 1;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"]) .sidebar-link-active {
+    background: rgba(99, 102, 241, 0.15) !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-active
+    svg {
+    color: rgba(99, 102, 241, 1) !important;
+    transform: scale(1.05);
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-active
+    span {
+    color: rgba(99, 102, 241, 1) !important;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(99, 102, 241, 0.15) 0%,
+      rgba(99, 102, 241, 0.25) 50%,
+      rgba(99, 102, 241, 0.15) 100%
+    );
+    border-radius: 0.5rem;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light:hover::before {
+    width: 100% !important;
+  }
+
+  /* Active state için de hover efekti */
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light[class*="bg-blue-500/20"]:hover::before {
+    width: 100% !important;
+    background: linear-gradient(
+      90deg,
+      rgba(99, 102, 241, 0.2) 0%,
+      rgba(99, 102, 241, 0.3) 50%,
+      rgba(99, 102, 241, 0.2) 100%
+    );
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(
+      180deg,
+      rgba(99, 102, 241, 0.8) 0%,
+      rgba(99, 102, 241, 1) 50%,
+      rgba(99, 102, 241, 0.8) 100%
+    );
+    border-radius: 0.5rem 0 0 0.5rem;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light:hover::after {
+    opacity: 1 !important;
+    transform: scaleY(1) !important;
+  }
+
+  /* Active state için de sol çizgi efekti */
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light[class*="bg-blue-500/20"]:hover::after {
+    opacity: 1 !important;
+    transform: scaleY(1) !important;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light:hover:not([class*="bg-blue-500/20"]):not(
+      [class*="bg-white/20"]
+    ) {
+    background: rgba(99, 102, 241, 0.12) !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    transform: translateX(4px) !important;
+  }
+
+  /* Active state için hover - daha hafif efekt */
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light[class*="bg-blue-500/20"]:hover {
+    background: rgba(99, 102, 241, 0.25) !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light
+    svg {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light:hover
+    svg {
+    transform: scale(1.1) !important;
+    color: rgba(99, 102, 241, 1) !important;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light:hover
+    span {
+    color: rgba(99, 102, 241, 1) !important;
+  }
+
+  /* Active state için ikon ve text hover */
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light[class*="bg-blue-500/20"]:hover
+    svg {
+    transform: scale(1.1) !important;
+    color: rgba(99, 102, 241, 1) !important;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"])
+    .sidebar-link-light[class*="bg-blue-500/20"]:hover
+    span {
+    color: rgba(99, 102, 241, 1) !important;
+  }
+
   @keyframes pulse-glow {
     0%,
     100% {
@@ -743,10 +928,12 @@
     color: rgb(55, 65, 81) !important; /* text-gray-700 */
   }
 
-  html[data-theme="light"]:not([data-public-page="true"]) .glass-nav a:hover,
   html[data-theme="light"]:not([data-public-page="true"])
     .glass-nav
-    button:hover {
+    a:not(.sidebar-link-light):hover,
+  html[data-theme="light"]:not([data-public-page="true"])
+    .glass-nav
+    button:not(.sidebar-link-light):hover {
     color: rgb(17, 24, 39) !important; /* text-gray-900 */
   }
 
