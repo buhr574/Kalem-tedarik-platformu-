@@ -268,7 +268,7 @@
     @apply transition-colors duration-300 ease-in-out;
   }
 
-  /* Text Colors for Light/Dark Mode */
+  /* Text Colors for Light/Dark Mode - Enhanced Readability */
   html[data-theme="dark"] h1,
   html[data-theme="dark"] h2,
   html[data-theme="dark"] h3,
@@ -276,6 +276,29 @@
   html:not([data-theme]) h2,
   html:not([data-theme]) h3 {
     @apply text-white;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* Enhanced text readability for dark mode */
+  html[data-theme="dark"] p,
+  html:not([data-theme]) p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  html[data-theme="dark"] .text-gray-300,
+  html:not([data-theme]) .text-gray-300 {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  html[data-theme="dark"] .text-gray-400,
+  html:not([data-theme]) .text-gray-400 {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  html[data-theme="dark"] .text-gray-500,
+  html:not([data-theme]) .text-gray-500 {
+    color: rgba(255, 255, 255, 0.6) !important;
   }
 
   html[data-theme="light"]:not([data-public-page="true"]) h1,
@@ -562,7 +585,13 @@
 
   html[data-theme="dark"] .glass-input,
   html:not([data-theme]) .glass-input {
-    @apply text-white placeholder:text-gray-500;
+    @apply text-white placeholder:text-gray-400;
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  html[data-theme="dark"] .glass-input::placeholder,
+  html:not([data-theme]) .glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
   }
 
   html[data-theme="light"]:not([data-public-page="true"]) .glass-input {

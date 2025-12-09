@@ -103,7 +103,7 @@ const PanelLayout = () => {
               className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                 location.pathname === "/panel"
                   ? "bg-white/20 dark:bg-white/20 bg-blue-500/20 dark:bg-white/20 text-white dark:text-white text-gray-900 dark:text-white font-semibold"
-                  : "text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white"
+                  : "text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white"
               }`}
             >
               <svg
@@ -129,7 +129,7 @@ const PanelLayout = () => {
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                   isActive(item.path)
                     ? "bg-white/20 dark:bg-white/20 bg-blue-500/20 dark:bg-white/20 text-white dark:text-white text-gray-900 dark:text-white font-semibold"
-                    : "text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white"
+                    : "text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white"
                 }`}
               >
                 {item.icon}
@@ -147,14 +147,14 @@ const PanelLayout = () => {
                 <p className="text-white dark:text-white text-gray-900 dark:text-white font-medium truncate">
                   {user?.fullName || "Kullanıcı"}
                 </p>
-                <p className="text-gray-400 dark:text-gray-400 text-gray-600 dark:text-gray-400 text-sm truncate">
+                <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm truncate">
                   {user?.email || ""}
                 </p>
               </div>
             </div>
             <button
               onClick={handleLogout}
-              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white transition-all duration-200"
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white transition-all duration-200"
             >
               <span>→</span>
               <span className="font-medium">Çıkış Yap</span>

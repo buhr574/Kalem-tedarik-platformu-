@@ -98,7 +98,7 @@ const OfferCard = ({ offer }) => {
               </h3>
               {getStatusBadge(offer.status)}
             </div>
-            <div className="text-gray-300 text-sm space-y-1">
+            <div className="text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 text-sm space-y-1">
               <p>
                 <span className="font-medium">{offer.quantity}</span>{" "}
                 {offer.currency === "TRY" ? "Adet" : "Unit"}
@@ -109,7 +109,7 @@ const OfferCard = ({ offer }) => {
                 </span>{" "}
                 {offer.currency} (Hedef)
               </p>
-              <p className="text-gray-400 text-xs mt-2">
+              <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-xs mt-2">
                 {offer.submittedBy} • {offer.submittedDate}
               </p>
             </div>

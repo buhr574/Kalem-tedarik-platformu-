@@ -12,7 +12,7 @@ const Input = ({
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-medium text-gray-300 mb-2">
+        <label className="block text-sm font-semibold text-gray-200 mb-3">
           {label}
           {required && <span className="text-red-400 ml-1">*</span>}
         </label>
@@ -27,7 +27,7 @@ const Input = ({
         {...props}
       />
       {error && (
-        <p className="mt-1 text-sm text-red-400">{error}</p>
+        <p className="mt-2 text-sm text-red-400 font-medium">{error}</p>
       )}
     </div>
   )

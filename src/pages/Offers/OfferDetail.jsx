@@ -33,7 +33,7 @@ const OfferDetail = () => {
             </svg>
           </div>
         </div>
-        <p className="text-white text-xl mb-4">Teklif bulunamadı</p>
+        <p className="text-white dark:text-white text-gray-900 dark:text-white text-xl mb-4">Teklif bulunamadı</p>
         <Button
           variant="secondary"
           onClick={() => navigate("/panel/teklifler")}
@@ -200,7 +200,7 @@ const OfferDetail = () => {
                 <h2 className="text-2xl font-bold text-white mb-4">
                   {offer.itemName}
                 </h2>
-                <div className="space-y-3 text-gray-300">
+                <div className="space-y-3 text-gray-300 dark:text-gray-200">
                   <div>
                     <span className="font-medium text-white">Miktar:</span>{" "}
                     {offer.quantity}{" "}
@@ -236,7 +236,7 @@ const OfferDetail = () => {
               <h3 className="text-xl font-semibold text-white mb-3">
                 Açıklama
               </h3>
-              <p className="text-gray-300 whitespace-pre-wrap">
+              <p className="text-gray-300 dark:text-gray-200 whitespace-pre-wrap">
                 {offer.description}
               </p>
             </Card>
@@ -316,7 +316,7 @@ const OfferDetail = () => {
                 </>
               )}
               {offer.status !== "pending" && (
-                <p className="text-gray-400 text-sm text-center">
+                <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm text-center">
                   Bu teklif{" "}
                   {offer.status === "approved" ? "onaylanmış" : "reddedilmiş"}{" "}
                   durumda.

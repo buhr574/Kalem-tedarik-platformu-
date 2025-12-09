@@ -139,7 +139,7 @@ const ItemForm = ({
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 mb-2">
             Birim <span className="text-red-400">*</span>
           </label>
           <select
@@ -165,7 +165,7 @@ const ItemForm = ({
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 mb-2">
             Ürün Görseli
           </label>
           <div className="space-y-3">
@@ -176,7 +176,7 @@ const ItemForm = ({
                 className={`px-3 py-1.5 rounded-lg text-sm transition-all ${
                   imageSource === "url"
                     ? "bg-blue-600 text-white border border-blue-500/30"
-                    : "glass-button text-gray-300 border border-white/10"
+                    : "glass-button text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 border border-white/10"
                 }`}
               >
                 URL
@@ -187,7 +187,7 @@ const ItemForm = ({
                 className={`px-3 py-1.5 rounded-lg text-sm transition-all ${
                   imageSource === "file"
                     ? "bg-blue-600 text-white border border-blue-500/30"
-                    : "glass-button text-gray-300 border border-white/10"
+                    : "glass-button text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 border border-white/10"
                 }`}
               >
                 Dosya
@@ -243,7 +243,7 @@ const ItemForm = ({
 
       {imagePreview && (
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 mb-2">
             Görsel Önizleme
           </label>
           <div

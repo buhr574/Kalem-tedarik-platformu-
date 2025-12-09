@@ -59,9 +59,9 @@ const PasswordStrength = ({ password }) => {
 
       {/* Requirements List */}
       <div className="space-y-1 text-xs">
-        <div className={`flex items-center gap-2 ${requirements.length ? 'text-green-400' : 'text-gray-400'}`}>
+        <div className={`flex items-center gap-2 ${requirements.length ? 'text-green-400' : 'text-gray-400 dark:text-gray-300'}`}>
           <svg
-            className={`w-3 h-3 ${requirements.length ? 'text-green-400' : 'text-gray-500'}`}
+            className={`w-3 h-3 ${requirements.length ? 'text-green-400' : 'text-gray-500 dark:text-gray-400'}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -84,9 +84,9 @@ const PasswordStrength = ({ password }) => {
           </svg>
           <span>En az 8 karakter</span>
         </div>
-        <div className={`flex items-center gap-2 ${requirements.lowercase ? 'text-green-400' : 'text-gray-400'}`}>
+        <div className={`flex items-center gap-2 ${requirements.lowercase ? 'text-green-400' : 'text-gray-400 dark:text-gray-300'}`}>
           <svg
-            className={`w-3 h-3 ${requirements.lowercase ? 'text-green-400' : 'text-gray-500'}`}
+            className={`w-3 h-3 ${requirements.lowercase ? 'text-green-400' : 'text-gray-500 dark:text-gray-400'}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -109,9 +109,9 @@ const PasswordStrength = ({ password }) => {
           </svg>
           <span>Küçük harf (a-z)</span>
         </div>
-        <div className={`flex items-center gap-2 ${requirements.uppercase ? 'text-green-400' : 'text-gray-400'}`}>
+        <div className={`flex items-center gap-2 ${requirements.uppercase ? 'text-green-400' : 'text-gray-400 dark:text-gray-300'}`}>
           <svg
-            className={`w-3 h-3 ${requirements.uppercase ? 'text-green-400' : 'text-gray-500'}`}
+            className={`w-3 h-3 ${requirements.uppercase ? 'text-green-400' : 'text-gray-500 dark:text-gray-400'}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -134,9 +134,9 @@ const PasswordStrength = ({ password }) => {
           </svg>
           <span>Büyük harf (A-Z)</span>
         </div>
-        <div className={`flex items-center gap-2 ${requirements.number ? 'text-green-400' : 'text-gray-400'}`}>
+        <div className={`flex items-center gap-2 ${requirements.number ? 'text-green-400' : 'text-gray-400 dark:text-gray-300'}`}>
           <svg
-            className={`w-3 h-3 ${requirements.number ? 'text-green-400' : 'text-gray-500'}`}
+            className={`w-3 h-3 ${requirements.number ? 'text-green-400' : 'text-gray-500 dark:text-gray-400'}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -159,9 +159,9 @@ const PasswordStrength = ({ password }) => {
           </svg>
           <span>Rakam (0-9)</span>
         </div>
-        <div className={`flex items-center gap-2 ${requirements.special ? 'text-green-400' : 'text-gray-400'}`}>
+        <div className={`flex items-center gap-2 ${requirements.special ? 'text-green-400' : 'text-gray-400 dark:text-gray-300'}`}>
           <svg
-            className={`w-3 h-3 ${requirements.special ? 'text-green-400' : 'text-gray-500'}`}
+            className={`w-3 h-3 ${requirements.special ? 'text-green-400' : 'text-gray-500 dark:text-gray-400'}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

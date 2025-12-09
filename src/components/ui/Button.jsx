@@ -20,7 +20,7 @@ const Button = ({
       "bg-red-600 dark:bg-red-600 bg-red-500 dark:bg-red-600 text-white dark:text-white text-white dark:text-white hover:bg-red-700 dark:hover:bg-red-700 hover:bg-red-600 dark:hover:bg-red-700 shadow-lg hover:shadow-xl border border-red-500/30 dark:border-red-500/30",
     success:
       "bg-green-600 dark:bg-green-600 bg-green-500 dark:bg-green-600 text-white dark:text-white text-white dark:text-white hover:bg-green-700 dark:hover:bg-green-700 hover:bg-green-600 dark:hover:bg-green-700 shadow-lg hover:shadow-xl border border-green-500/30 dark:border-green-500/30",
-    ghost: "text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white hover:bg-white/5 dark:hover:bg-white/5 hover:bg-blue-500/10 dark:hover:bg-white/5",
+    ghost: "text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white hover:bg-white/5 dark:hover:bg-white/5 hover:bg-blue-500/10 dark:hover:bg-white/5",
   };
 
   const sizes = {

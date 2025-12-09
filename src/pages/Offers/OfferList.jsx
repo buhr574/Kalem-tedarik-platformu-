@@ -43,7 +43,7 @@ const OfferList = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-white text-xl">Yükleniyor...</div>
+        <div className="text-white dark:text-white text-gray-900 dark:text-white text-xl">Yükleniyor...</div>
       </div>
     );
   }
@@ -51,7 +51,7 @@ const OfferList = () => {
   return (
     <div>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-        <h1 className="text-3xl font-bold text-white mb-4 md:mb-0">
+        <h1 className="text-3xl font-bold text-white dark:text-white text-gray-900 dark:text-white mb-4 md:mb-0">
           Teklif Listesi
         </h1>
         <Link to="/panel/teklifler/yeni">
@@ -64,8 +64,8 @@ const OfferList = () => {
         <div className="glass-card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 text-sm">Toplam Teklif</p>
-              <p className="text-2xl font-bold text-white">{stats.total}</p>
+              <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm">Toplam Teklif</p>
+              <p className="text-2xl font-bold text-white dark:text-white text-gray-900 dark:text-white">{stats.total}</p>
             </div>
             <div className="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
               <svg
@@ -87,7 +87,7 @@ const OfferList = () => {
         <div className="glass-card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 text-sm">Bekleyen</p>
+              <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm">Bekleyen</p>
               <p className="text-2xl font-bold text-yellow-400">
                 {stats.pending}
               </p>
@@ -112,7 +112,7 @@ const OfferList = () => {
         <div className="glass-card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 text-sm">Onaylanan</p>
+              <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm">Onaylanan</p>
               <p className="text-2xl font-bold text-green-400">
                 {stats.approved}
               </p>
@@ -137,7 +137,7 @@ const OfferList = () => {
         <div className="glass-card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 text-sm">Toplam Kalem</p>
+              <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm">Toplam Kalem</p>
               <p className="text-2xl font-bold text-blue-400">{stats.total}</p>
             </div>
             <div className="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-500/30">

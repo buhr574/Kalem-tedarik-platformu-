@@ -215,14 +215,16 @@ const Register = () => {
       <div className="relative z-10 glass-strong p-8 w-full max-w-md animate-scale-in">
         <Link
           to="/"
-          className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition-colors"
+          className="inline-flex items-center text-gray-300 hover:text-white mb-6 transition-colors font-medium"
         >
-          <span className="mr-2">←</span>
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
           <span>Geri</span>
         </Link>
 
-        <h1 className="text-3xl font-bold text-white mb-2">Kayıt Ol</h1>
-        <p className="text-gray-400 mb-8">Yeni bir hesap oluşturun</p>
+        <h1 className="text-4xl font-bold text-white mb-3">Kayıt Ol</h1>
+        <p className="text-gray-200 mb-8 text-lg">Yeni bir hesap oluşturun</p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -238,9 +240,9 @@ const Register = () => {
               required
             />
             {touched.fullName && !errors.fullName && formData.fullName && (
-              <p className="mt-1 text-xs text-green-400 flex items-center gap-1">
+              <p className="mt-2 text-sm text-green-400 flex items-center gap-2 font-medium">
                 <svg
-                  className="w-3 h-3"
+                  className="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -270,9 +272,9 @@ const Register = () => {
               required
             />
             {touched.email && !errors.email && formData.email && (
-              <p className="mt-1 text-xs text-green-400 flex items-center gap-1">
+              <p className="mt-2 text-sm text-green-400 flex items-center gap-2 font-medium">
                 <svg
-                  className="w-3 h-3"
+                  className="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -322,9 +324,9 @@ const Register = () => {
               !errors.passwordConfirm &&
               formData.passwordConfirm &&
               formData.password === formData.passwordConfirm && (
-                <p className="mt-1 text-xs text-green-400 flex items-center gap-1">
+                <p className="mt-2 text-sm text-green-400 flex items-center gap-2 font-medium">
                   <svg
-                    className="w-3 h-3"
+                    className="w-4 h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -342,7 +344,7 @@ const Register = () => {
           </div>
 
           {errors.submit && (
-            <div className="bg-red-500/20 border border-red-500/50 text-red-300 px-4 py-3 rounded-lg text-sm">
+            <div className="bg-red-500/20 border border-red-500/50 text-red-300 px-4 py-3 rounded-lg text-sm font-medium">
               {errors.submit}
             </div>
           )}
@@ -357,11 +359,11 @@ const Register = () => {
           </Button>
         </form>
 
-        <p className="text-center text-gray-400 mt-6">
+        <p className="text-center text-gray-200 mt-6 text-base">
           Zaten üye misiniz?{" "}
           <Link
             to="/giris"
-            className="text-blue-400 hover:text-blue-300 font-medium"
+            className="text-blue-400 hover:text-blue-300 font-semibold underline underline-offset-2 transition-colors"
           >
             Giriş Yap
           </Link>

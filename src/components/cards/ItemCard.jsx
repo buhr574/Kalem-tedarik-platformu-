@@ -22,13 +22,13 @@ const ItemCard = ({ item, onEdit, onDelete }) => {
           </div>
         </div>
         <h3 className="text-xl font-semibold text-white mb-2">{item.name}</h3>
-        <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+        <p className="text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 text-sm mb-4 line-clamp-2">
           {item.description}
         </p>
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-          <span className="text-gray-400 text-sm">
+          <span className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm">
             Birim:{" "}
-            <span className="text-gray-300 font-medium">{item.unit}</span>
+            <span className="text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 font-medium">{item.unit}</span>
           </span>
           <div className="flex gap-2">
             {onEdit && (

@@ -75,7 +75,7 @@ const ItemList = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-white text-xl">Yükleniyor...</div>
+        <div className="text-white dark:text-white text-gray-900 dark:text-white text-xl">Yükleniyor...</div>
       </div>
     );
   }
@@ -83,7 +83,7 @@ const ItemList = () => {
   return (
     <div>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-        <h1 className="text-3xl font-bold text-white mb-4 md:mb-0">
+        <h1 className="text-3xl font-bold text-white dark:text-white text-gray-900 dark:text-white mb-4 md:mb-0">
           Alım Kalemleri
         </h1>
         <Button variant="primary" onClick={handleCreate}>
