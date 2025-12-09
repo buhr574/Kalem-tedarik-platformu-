@@ -280,6 +280,15 @@
     letter-spacing: -0.02em;
   }
 
+  /* Light Mode Headings - Panel pages only */
+  html[data-theme="light"]:not([data-public-page="true"]) h1,
+  html[data-theme="light"]:not([data-public-page="true"]) h2,
+  html[data-theme="light"]:not([data-public-page="true"]) h3 {
+    @apply text-gray-900;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
   /* Enhanced text readability for dark mode */
   html[data-theme="dark"] p,
   html:not([data-theme]) p {
@@ -305,6 +314,8 @@
   html[data-theme="light"]:not([data-public-page="true"]) h2,
   html[data-theme="light"]:not([data-public-page="true"]) h3 {
     @apply text-gray-900;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   html[data-public-page="true"] h1,
@@ -596,6 +607,11 @@
 
   html[data-theme="light"]:not([data-public-page="true"]) .glass-input {
     @apply text-gray-900 placeholder:text-gray-500;
+    color: rgba(17, 24, 39, 0.95) !important;
+  }
+
+  html[data-theme="light"]:not([data-public-page="true"]) .glass-input::placeholder {
+    color: rgba(107, 114, 128, 0.7) !important;
   }
 
   html[data-public-page="true"] .glass-input {

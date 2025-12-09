@@ -64,8 +64,8 @@ const OfferList = () => {
         <div className="glass-card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm">Toplam Teklif</p>
-              <p className="text-2xl font-bold text-white dark:text-white text-gray-900 dark:text-white">{stats.total}</p>
+              <p className="text-gray-400 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-sm font-semibold mb-1">Toplam Teklif</p>
+              <p className="text-3xl font-bold text-white dark:text-white text-gray-900 dark:text-white">{stats.total}</p>
             </div>
             <div className="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
               <svg
@@ -87,8 +87,8 @@ const OfferList = () => {
         <div className="glass-card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm">Bekleyen</p>
-              <p className="text-2xl font-bold text-yellow-400">
+              <p className="text-gray-400 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-sm font-semibold mb-1">Bekleyen</p>
+              <p className="text-3xl font-bold text-yellow-400 dark:text-yellow-400 text-yellow-600 dark:text-yellow-400">
                 {stats.pending}
               </p>
             </div>
@@ -112,8 +112,8 @@ const OfferList = () => {
         <div className="glass-card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm">Onaylanan</p>
-              <p className="text-2xl font-bold text-green-400">
+              <p className="text-gray-400 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-sm font-semibold mb-1">Onaylanan</p>
+              <p className="text-3xl font-bold text-green-400 dark:text-green-400 text-green-600 dark:text-green-400">
                 {stats.approved}
               </p>
             </div>
@@ -137,8 +137,8 @@ const OfferList = () => {
         <div className="glass-card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm">Toplam Kalem</p>
-              <p className="text-2xl font-bold text-blue-400">{stats.total}</p>
+              <p className="text-gray-400 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-sm font-semibold mb-1">Toplam Kalem</p>
+              <p className="text-3xl font-bold text-blue-400 dark:text-blue-400 text-blue-600 dark:text-blue-400">{stats.total}</p>
             </div>
             <div className="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
               <svg

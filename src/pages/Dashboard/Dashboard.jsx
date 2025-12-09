@@ -100,7 +100,7 @@ const Dashboard = () => {
   if (offersLoading || itemsLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-white text-xl font-medium">Yükleniyor...</div>
+        <div className="text-white dark:text-white text-gray-900 dark:text-white text-xl font-medium">Yükleniyor...</div>
       </div>
     );
   }
@@ -109,10 +109,10 @@ const Dashboard = () => {
     <div>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
         <div>
-          <h1 className="text-4xl font-bold text-white mb-2">
+          <h1 className="text-4xl font-bold text-white dark:text-white text-gray-900 dark:text-white mb-2">
             Genel Bakış
           </h1>
-          <p className="text-gray-300 text-base">Tüm teklif ve kalem istatistikleriniz</p>
+          <p className="text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-base font-medium">Tüm teklif ve kalem istatistikleriniz</p>
         </div>
         <Link to="/panel/teklifler/yeni">
           <Button variant="primary">+ Yeni Teklif Talebi</Button>
@@ -124,8 +124,8 @@ const Dashboard = () => {
         <Card>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-300 text-sm font-medium mb-1">Toplam Teklif</p>
-              <p className="text-3xl font-bold text-white">
+              <p className="text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-sm font-semibold mb-1">Toplam Teklif</p>
+              <p className="text-3xl font-bold text-white dark:text-white text-gray-900 dark:text-white">
                 {stats.totalOffers}
               </p>
             </div>
@@ -149,8 +149,8 @@ const Dashboard = () => {
         <Card>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-300 text-sm font-medium mb-1">Bekleyen</p>
-              <p className="text-3xl font-bold text-yellow-400">
+              <p className="text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-sm font-semibold mb-1">Bekleyen</p>
+              <p className="text-3xl font-bold text-yellow-400 dark:text-yellow-400 text-yellow-600 dark:text-yellow-400">
                 {stats.pending}
               </p>
             </div>
@@ -174,8 +174,8 @@ const Dashboard = () => {
         <Card>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-300 text-sm font-medium mb-1">Onaylanan</p>
-              <p className="text-3xl font-bold text-green-400">
+              <p className="text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-sm font-semibold mb-1">Onaylanan</p>
+              <p className="text-3xl font-bold text-green-400 dark:text-green-400 text-green-600 dark:text-green-400">
                 {stats.approved}
               </p>
             </div>
@@ -199,8 +199,8 @@ const Dashboard = () => {
         <Card>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-300 text-sm font-medium mb-1">Toplam Kalem</p>
-              <p className="text-3xl font-bold text-blue-400">
+              <p className="text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-sm font-semibold mb-1">Toplam Kalem</p>
+              <p className="text-3xl font-bold text-blue-400 dark:text-blue-400 text-blue-600 dark:text-blue-400">
                 {stats.totalItems}
               </p>
             </div>
@@ -226,12 +226,12 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Teklif Durum Analizi */}
         <Card>
-          <h2 className="text-2xl font-bold text-white mb-6">Teklif Durum Analizi</h2>
+          <h2 className="text-2xl font-bold text-white dark:text-white text-gray-900 dark:text-white mb-6">Teklif Durum Analizi</h2>
           <div className="flex items-end gap-6 h-48">
             {/* Y-axis labels */}
             <div className="flex flex-col justify-between h-full pb-8 pr-2">
               {[4, 3, 2, 1, 0].map((num) => (
-                <span key={num} className="text-gray-300 text-sm font-medium">
+                <span key={num} className="text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-sm font-semibold">
                   {num}
                 </span>
               ))}
@@ -253,7 +253,7 @@ const Dashboard = () => {
                     }}
                   ></div>
                 </div>
-                <span className="text-gray-200 text-sm font-semibold">
+                <span className="text-gray-200 dark:text-gray-200 text-gray-800 dark:text-gray-200 text-sm font-semibold">
                   Bekleyen
                 </span>
               </div>
@@ -272,7 +272,7 @@ const Dashboard = () => {
                     }}
                   ></div>
                 </div>
-                <span className="text-gray-200 text-sm font-semibold">
+                <span className="text-gray-200 dark:text-gray-200 text-gray-800 dark:text-gray-200 text-sm font-semibold">
                   Onaylanan
                 </span>
               </div>
@@ -294,7 +294,7 @@ const Dashboard = () => {
                     }}
                   ></div>
                 </div>
-                <span className="text-gray-200 text-sm font-semibold">
+                <span className="text-gray-200 dark:text-gray-200 text-gray-800 dark:text-gray-200 text-sm font-semibold">
                   Toplam
                 </span>
               </div>
@@ -304,10 +304,10 @@ const Dashboard = () => {
 
         {/* Son Aktiviteler */}
         <Card>
-          <h2 className="text-2xl font-bold text-white mb-6">Son Aktiviteler</h2>
+          <h2 className="text-2xl font-bold text-white dark:text-white text-gray-900 dark:text-white mb-6">Son Aktiviteler</h2>
           {recentOffers.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-300 text-base">Henüz aktivite yok</p>
+              <p className="text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-base font-medium">Henüz aktivite yok</p>
             </div>
           ) : (
             <div className="space-y-2">
@@ -315,13 +315,13 @@ const Dashboard = () => {
                 <Link
                   key={offer.id}
                   to={`/panel/teklifler/${offer.id}`}
-                  className="flex items-center justify-between p-4 rounded-xl hover:bg-white/10 transition-all duration-200 border border-transparent hover:border-white/20"
+                  className="flex items-center justify-between p-4 rounded-xl hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/10 dark:hover:bg-white/10 transition-all duration-200 border border-transparent hover:border-white/20 dark:hover:border-white/20 hover:border-blue-500/30 dark:hover:border-white/20"
                 >
                   <div className="flex-1 min-w-0">
-                    <p className="text-white font-semibold text-base truncate mb-1">
+                    <p className="text-white dark:text-white text-gray-900 dark:text-white font-semibold text-base truncate mb-1">
                       Talep #{offer.id}
                     </p>
-                    <p className="text-gray-300 text-sm">
+                    <p className="text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-sm font-medium">
                       {offer.submittedDate}
                     </p>
                   </div>
