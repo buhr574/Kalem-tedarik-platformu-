@@ -100,3 +100,5 @@ export const OfferProvider = ({ children }) => {
   return <OfferContext.Provider value={value}>{children}</OfferContext.Provider>
 }
 
+
+

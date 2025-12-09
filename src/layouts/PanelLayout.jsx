@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Button from "../components/ui/Button";
+import ThemeToggle from "../components/ui/ThemeToggle";
 
 const PanelLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -172,7 +173,7 @@ const PanelLayout = () => {
           <div className="flex items-center justify-between">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-all duration-200"
+              className="md:hidden text-white dark:text-white text-gray-900 p-2 hover:bg-white/10 dark:hover:bg-white/10 rounded-lg transition-all duration-200"
             >
               <svg
                 className="w-6 h-6"
@@ -189,6 +190,7 @@ const PanelLayout = () => {
               </svg>
             </button>
             <div className="flex-1" />
+            <ThemeToggle />
           </div>
         </header>
 
