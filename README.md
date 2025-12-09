@@ -8,7 +8,7 @@ Modern, kullanıcı dostu bir B2B tedarik ve teklif yönetim platformu. Şirketl
 
 - **Glassmorphism Tasarım**: Modern ve şık kullanıcı arayüzü
 - **Tam Responsive**: Mobil, tablet ve masaüstü uyumlu
-- **Dark Theme**: Göz yormayan karanlık tema
+- **Dark/Light Mode**: Göz yormayan karanlık ve açık tema desteği
 - **Hızlı ve Performanslı**: Optimize edilmiş React yapısı
 
 ### Kullanıcı Özellikleri
@@ -16,15 +16,15 @@ Modern, kullanıcı dostu bir B2B tedarik ve teklif yönetim platformu. Şirketl
 - **Kimlik Doğrulama**: Güvenli giriş ve kayıt sistemi
 - **Dashboard**: Genel bakış ve istatistikler
 - **Teklif Yönetimi**:
-- Teklif listeleme ve filtreleme
-- Teklif detay görüntüleme
-- Yeni teklif talebi oluşturma
-- Teklif onaylama/reddetme
+  - Teklif listeleme ve filtreleme
+  - Teklif detay görüntüleme
+  - Yeni teklif talebi oluşturma
+  - Teklif onaylama/reddetme
 - **Alım Kalemleri Yönetimi**:
-- Kalem listeleme
-- Yeni kalem ekleme
-- Kalem düzenleme
-- Kalem silme
+  - Kalem listeleme
+  - Yeni kalem ekleme
+  - Kalem düzenleme
+  - Kalem silme
 
 ## Teknoloji Stack
 
@@ -47,7 +47,8 @@ src/
 ├── context/            # Context API providers
 │   ├── AuthContext.jsx
 │   ├── OfferContext.jsx
-│   └── ItemContext.jsx
+│   ├── ItemContext.jsx
+│   └── ThemeContext.jsx
 ├── layouts/            # Layout bileşenleri
 │   ├── PublicLayout.jsx
 │   └── PanelLayout.jsx
@@ -55,8 +56,9 @@ src/
 │   ├── Landing/        # Anasayfa
 │   ├── Auth/           # Giriş/Kayıt
 │   ├── Offers/         # Teklif sayfaları
-│   └── Items/          # Alım kalemleri sayfası
-├── services/            # API servisleri
+│   ├── Items/          # Alım kalemleri sayfası
+│   └── Dashboard/      # Dashboard sayfası
+├── services/           # API servisleri
 │   └── api/
 │       ├── auth.js
 │       ├── offers.js
@@ -113,7 +115,7 @@ Build'i önizlemek için:
 npm run preview
 ```
 
-## 🎯 Kullanım
+## Kullanım
 
 ### Demo Giriş Bilgileri
 
@@ -196,5 +198,3 @@ Bu proje test amaçlı geliştirilmiştir.
 ---
 
 **Not:** Bu proje, modern React geliştirme pratiklerini ve kullanıcı deneyimi odaklı tasarım anlayışını göstermek için geliştirilmiştir.
-
-
