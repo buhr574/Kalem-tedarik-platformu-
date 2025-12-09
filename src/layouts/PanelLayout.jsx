@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Button from "../components/ui/Button";
@@ -9,6 +9,11 @@ const PanelLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logout } = useAuth();
+
+  useEffect(() => {
+    // Remove public page attribute when entering panel
+    document.documentElement.removeAttribute("data-public-page");
+  }, []);
 
   const menuItems = [
     {
@@ -89,7 +94,7 @@ const PanelLayout = () => {
       >
         <div className="flex flex-col h-full p-6">
           <div className="mb-8">
-            <h1 className="text-2xl font-bold text-white">Tedarik Platformu</h1>
+            <h1 className="text-2xl font-bold text-white dark:text-white text-gray-900 dark:text-white">Tedarik Platformu</h1>
           </div>
 
           <nav className="flex-1 space-y-2">
@@ -97,8 +102,8 @@ const PanelLayout = () => {
               to="/panel"
               className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                 location.pathname === "/panel"
-                  ? "bg-white/20 text-white"
-                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+                  ? "bg-white/20 dark:bg-white/20 bg-blue-500/20 dark:bg-white/20 text-white dark:text-white text-gray-900 dark:text-white font-semibold"
+                  : "text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white"
               }`}
             >
               <svg
@@ -114,7 +119,7 @@ const PanelLayout = () => {
                   d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
                 />
               </svg>
-              <span>Panel</span>
+              <span className="font-medium">Panel</span>
             </Link>
 
             {menuItems.map((item) => (
@@ -123,36 +128,36 @@ const PanelLayout = () => {
                 to={item.path}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                   isActive(item.path)
-                    ? "bg-white/20 text-white"
-                    : "text-gray-300 hover:bg-white/10 hover:text-white"
+                    ? "bg-white/20 dark:bg-white/20 bg-blue-500/20 dark:bg-white/20 text-white dark:text-white text-gray-900 dark:text-white font-semibold"
+                    : "text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white"
                 }`}
               >
                 {item.icon}
-                <span>{item.label}</span>
+                <span className="font-medium">{item.label}</span>
               </Link>
             ))}
           </nav>
 
-          <div className="border-t border-white/20 pt-4 mt-4">
+          <div className="border-t border-white/20 dark:border-white/20 border-gray-300/30 dark:border-white/20 pt-4 mt-4">
             <div className="flex items-center gap-3 mb-4 px-4">
-              <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-semibold border border-blue-500/30">
+              <div className="w-10 h-10 rounded-full bg-blue-600 dark:bg-blue-600 flex items-center justify-center text-white font-semibold border border-blue-500/30 dark:border-blue-500/30">
                 {user?.fullName?.charAt(0) || "U"}
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-white font-medium truncate">
+                <p className="text-white dark:text-white text-gray-900 dark:text-white font-medium truncate">
                   {user?.fullName || "Kullanıcı"}
                 </p>
-                <p className="text-gray-400 text-sm truncate">
+                <p className="text-gray-400 dark:text-gray-400 text-gray-600 dark:text-gray-400 text-sm truncate">
                   {user?.email || ""}
                 </p>
               </div>
             </div>
             <button
               onClick={handleLogout}
-              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 hover:text-white transition-all duration-200"
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-blue-500/15 dark:hover:bg-white/10 hover:text-white dark:hover:text-white hover:text-gray-900 dark:hover:text-white transition-all duration-200"
             >
               <span>→</span>
-              <span>Çıkış Yap</span>
+              <span className="font-medium">Çıkış Yap</span>
             </button>
           </div>
         </div>
@@ -169,7 +174,7 @@ const PanelLayout = () => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top Navbar */}
-        <header className="glass-nav border-b border-white/20 p-4">
+        <header className="glass-nav border-b border-white/20 dark:border-white/20 border-gray-300/30 dark:border-white/20 p-4">
           <div className="flex items-center justify-between">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
