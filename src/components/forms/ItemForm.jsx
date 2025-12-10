@@ -114,8 +114,8 @@ const ItemForm = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
+    <form onSubmit={handleSubmit} className="space-y-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <Input
           label="Kalem Adı"
           name="name"
@@ -137,7 +137,7 @@ const ItemForm = ({
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
           <label className="block text-sm font-medium text-gray-300 dark:text-white text-gray-700 dark:text-white mb-1.5">
             Birim <span className="text-red-400">*</span>
@@ -173,10 +173,10 @@ const ItemForm = ({
               <button
                 type="button"
                 onClick={() => handleImageSourceChange("url")}
-                className={`px-3 py-1.5 rounded-lg text-sm transition-all ${
+                className={`px-2.5 py-1.5 rounded-lg text-xs sm:text-sm transition-all ${
                   imageSource === "url"
                     ? "bg-blue-600 text-white border border-blue-500/30"
-                    : "glass-button text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 border border-white/10"
+                    : "glass-button text-gray-300 dark:text-white text-gray-700 dark:text-white border border-white/10"
                 }`}
               >
                 URL
@@ -184,10 +184,10 @@ const ItemForm = ({
               <button
                 type="button"
                 onClick={() => handleImageSourceChange("file")}
-                className={`px-3 py-1.5 rounded-lg text-sm transition-all ${
+                className={`px-2.5 py-1.5 rounded-lg text-xs sm:text-sm transition-all ${
                   imageSource === "file"
                     ? "bg-blue-600 text-white border border-blue-500/30"
-                    : "glass-button text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 border border-white/10"
+                    : "glass-button text-gray-300 dark:text-white text-gray-700 dark:text-white border border-white/10"
                 }`}
               >
                 Dosya
@@ -248,12 +248,12 @@ const ItemForm = ({
           </label>
           <div
             className="relative w-full bg-black/20 rounded-lg border border-white/10 overflow-hidden flex items-center justify-center"
-            style={{ minHeight: "150px", maxHeight: "200px" }}
+            style={{ minHeight: "100px", maxHeight: "140px" }}
           >
             <img
               src={imagePreview}
               alt="Preview"
-              className="max-w-full max-h-[180px] w-auto h-auto object-contain rounded-lg"
+              className="max-w-full max-h-[120px] w-auto h-auto object-contain rounded-lg"
               onError={(e) => {
                 e.target.style.display = "none";
               }}
@@ -289,14 +289,16 @@ const ItemForm = ({
         </div>
       )}
 
-      <Textarea
-        label="Açıklama"
-        name="description"
-        value={formData.description}
-        onChange={handleChange}
-        placeholder="Ürün açıklaması..."
-        rows={2}
-      />
+      <div>
+        <Textarea
+          label="Açıklama"
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+          placeholder="Ürün açıklaması..."
+          rows={2}
+        />
+      </div>
 
       <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-end pt-1">
         {onCancel && (

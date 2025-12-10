@@ -75,7 +75,9 @@ const ItemList = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-white dark:text-white text-gray-900 dark:text-white text-xl">Yükleniyor...</div>
+        <div className="text-white dark:text-white text-gray-900 dark:text-white text-xl">
+          Yükleniyor...
+        </div>
       </div>
     );
   }
