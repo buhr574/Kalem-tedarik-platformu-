@@ -102,7 +102,7 @@ const OfferForm = ({ onSubmit, initialData = null, isLoading = false }) => {
             min="0"
             step="0.01"
           />
-          <p className="mt-1 text-sm text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300">Birim: {formData.currency}</p>
+          <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">Birim: {formData.currency}</p>
         </div>
       </div>
 

@@ -269,10 +269,10 @@ const PanelLayout = () => {
                 {user?.fullName?.charAt(0) || "U"}
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-white dark:text-white text-gray-900 dark:text-white font-medium truncate">
+                <p className="text-gray-900 dark:text-white font-medium truncate">
                   {user?.fullName || "Kullanıcı"}
                 </p>
-                <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm truncate">
+                <p className="text-gray-600 dark:text-gray-300 text-sm truncate">
                   {user?.email || ""}
                 </p>
               </div>

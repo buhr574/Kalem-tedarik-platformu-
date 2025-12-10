@@ -33,7 +33,7 @@ const OfferDetail = () => {
             </svg>
           </div>
         </div>
-        <p className="text-white dark:text-white text-gray-900 dark:text-white text-xl mb-4">Teklif bulunamadı</p>
+        <p className="text-gray-900 dark:text-white text-xl mb-4">Teklif bulunamadı</p>
         <Button
           variant="secondary"
           onClick={() => navigate("/panel/teklifler")}
@@ -166,7 +166,7 @@ const OfferDetail = () => {
           <Button variant="ghost" onClick={() => navigate("/panel/teklifler")}>
             ← Geri
           </Button>
-          <h1 className="text-3xl font-bold text-white">Teklif Detayları</h1>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Teklif Detayları</h1>
         </div>
         {getStatusBadge(offer.status)}
       </div>
@@ -197,24 +197,24 @@ const OfferDetail = () => {
                 }}
               />
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-white mb-4">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   {offer.itemName}
                 </h2>
-                <div className="space-y-3 text-gray-300 dark:text-gray-200">
+                <div className="space-y-3 text-gray-700 dark:text-gray-200">
                   <div>
-                    <span className="font-medium text-white">Miktar:</span>{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">Miktar:</span>{" "}
                     {offer.quantity}{" "}
                     {offer.currency === "TRY" ? "Adet" : "Unit"}
                   </div>
                   <div>
-                    <span className="font-medium text-white">
+                    <span className="font-medium text-gray-900 dark:text-white">
                       Hedef Birim Fiyat:
                     </span>{" "}
                     {offer.targetUnitPrice.toLocaleString("tr-TR")}{" "}
                     {offer.currency}
                   </div>
                   <div>
-                    <span className="font-medium text-white">
+                    <span className="font-medium text-gray-900 dark:text-white">
                       Toplam Tutar:
                     </span>{" "}
                     {(offer.quantity * offer.targetUnitPrice).toLocaleString(
@@ -223,7 +223,7 @@ const OfferDetail = () => {
                     {offer.currency}
                   </div>
                   <div>
-                    <span className="font-medium text-white">Para Birimi:</span>{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">Para Birimi:</span>{" "}
                     {offer.currency}
                   </div>
                 </div>
@@ -233,30 +233,30 @@ const OfferDetail = () => {
 
           {offer.description && (
             <Card>
-              <h3 className="text-xl font-semibold text-white mb-3">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                 Açıklama
               </h3>
-              <p className="text-gray-300 dark:text-gray-200 whitespace-pre-wrap">
+              <p className="text-gray-700 dark:text-gray-200 whitespace-pre-wrap">
                 {offer.description}
               </p>
             </Card>
           )}
 
           <Card>
-            <h3 className="text-xl font-semibold text-white mb-4">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
               Teklif Bilgileri
             </h3>
-            <div className="space-y-3 text-gray-300">
+            <div className="space-y-3 text-gray-700 dark:text-gray-300">
               <div>
-                <span className="font-medium text-white">Teklif No:</span> #
+                <span className="font-medium text-gray-900 dark:text-white">Teklif No:</span> #
                 {offer.id}
               </div>
               <div>
-                <span className="font-medium text-white">Oluşturan:</span>{" "}
+                <span className="font-medium text-gray-900 dark:text-white">Oluşturan:</span>{" "}
                 {offer.submittedBy}
               </div>
               <div>
-                <span className="font-medium text-white">
+                <span className="font-medium text-gray-900 dark:text-white">
                   Oluşturulma Tarihi:
                 </span>{" "}
                 {offer.submittedDate}
@@ -267,7 +267,7 @@ const OfferDetail = () => {
 
         <div className="space-y-6">
           <Card>
-            <h3 className="text-xl font-semibold text-white mb-4">İşlemler</h3>
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">İşlemler</h3>
             <div className="space-y-3">
               {offer.status === "pending" && (
                 <>
@@ -316,7 +316,7 @@ const OfferDetail = () => {
                 </>
               )}
               {offer.status !== "pending" && (
-                <p className="text-gray-400 dark:text-gray-300 text-gray-600 dark:text-gray-300 text-sm text-center">
+                <p className="text-gray-600 dark:text-gray-300 text-sm text-center">
                   Bu teklif{" "}
                   {offer.status === "approved" ? "onaylanmış" : "reddedilmiş"}{" "}
                   durumda.

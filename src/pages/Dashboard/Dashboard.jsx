@@ -125,7 +125,7 @@ const Dashboard = () => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-300 dark:text-gray-300 text-gray-700 dark:text-gray-300 text-sm font-semibold mb-1">Toplam Teklif</p>
-              <p className="text-3xl font-bold text-white dark:text-white text-gray-900 dark:text-white">
+              <p className="text-3xl font-bold text-gray-900 dark:text-white">
                 {stats.totalOffers}
               </p>
             </div>
@@ -253,7 +253,7 @@ const Dashboard = () => {
                     }}
                   ></div>
                 </div>
-                <span className="text-gray-200 dark:text-gray-200 text-gray-800 dark:text-gray-200 text-sm font-semibold">
+                <span className="text-gray-900 dark:text-white text-sm font-semibold">
                   Bekleyen
                 </span>
               </div>
@@ -272,7 +272,7 @@ const Dashboard = () => {
                     }}
                   ></div>
                 </div>
-                <span className="text-gray-200 dark:text-gray-200 text-gray-800 dark:text-gray-200 text-sm font-semibold">
+                <span className="text-gray-900 dark:text-white text-sm font-semibold">
                   Onaylanan
                 </span>
               </div>
@@ -294,7 +294,7 @@ const Dashboard = () => {
                     }}
                   ></div>
                 </div>
-                <span className="text-gray-200 dark:text-gray-200 text-gray-800 dark:text-gray-200 text-sm font-semibold">
+                <span className="text-gray-900 dark:text-white text-sm font-semibold">
                   Toplam
                 </span>
               </div>

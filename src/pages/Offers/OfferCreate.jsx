@@ -34,7 +34,7 @@ const OfferCreate = () => {
           <Button variant="ghost" onClick={() => navigate('/panel/teklifler')}>
             ← Geri
           </Button>
-          <h1 className="text-3xl font-bold text-white">Yeni Teklif Talebi</h1>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Yeni Teklif Talebi</h1>
         </div>
       </div>
 
@@ -58,6 +58,8 @@ const OfferCreate = () => {
 }
 
 export default OfferCreate
+
+
 
 
 
