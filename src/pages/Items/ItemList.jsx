@@ -146,7 +146,7 @@ const ItemList = () => {
         isOpen={isModalOpen}
         onClose={handleCancel}
         title={editingItem ? "Kalem Düzenle" : "Yeni Kalem Ekle"}
-        size="lg"
+        size="md"
       >
         <ItemForm
           initialData={editingItem}

@@ -114,8 +114,8 @@ const ItemForm = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
         <Input
           label="Kalem Adı"
           name="name"
@@ -137,9 +137,9 @@ const ItemForm = ({
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
         <div>
-          <label className="block text-sm font-medium text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 mb-2">
+          <label className="block text-sm font-medium text-gray-300 dark:text-white text-gray-700 dark:text-white mb-1.5">
             Birim <span className="text-red-400">*</span>
           </label>
           <select
@@ -165,10 +165,10 @@ const ItemForm = ({
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 mb-2">
+          <label className="block text-sm font-medium text-gray-300 dark:text-white text-gray-700 dark:text-white mb-1.5">
             Ürün Görseli
           </label>
-          <div className="space-y-3">
+          <div className="space-y-2">
             <div className="flex gap-2">
               <button
                 type="button"
@@ -243,17 +243,17 @@ const ItemForm = ({
 
       {imagePreview && (
         <div>
-          <label className="block text-sm font-medium text-gray-300 dark:text-gray-200 text-gray-700 dark:text-gray-200 mb-2">
+          <label className="block text-sm font-medium text-gray-300 dark:text-white text-gray-700 dark:text-white mb-1.5">
             Görsel Önizleme
           </label>
           <div
             className="relative w-full bg-black/20 rounded-lg border border-white/10 overflow-hidden flex items-center justify-center"
-            style={{ minHeight: "300px" }}
+            style={{ minHeight: "150px", maxHeight: "200px" }}
           >
             <img
               src={imagePreview}
               alt="Preview"
-              className="max-w-full max-h-[400px] w-auto h-auto object-contain rounded-lg"
+              className="max-w-full max-h-[180px] w-auto h-auto object-contain rounded-lg"
               onError={(e) => {
                 e.target.style.display = "none";
               }}
@@ -295,10 +295,10 @@ const ItemForm = ({
         value={formData.description}
         onChange={handleChange}
         placeholder="Ürün açıklaması..."
-        rows={3}
+        rows={2}
       />
 
-      <div className="flex gap-4 justify-end">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-end pt-1">
         {onCancel && (
           <Button type="button" variant="secondary" onClick={onCancel}>
             İptal
