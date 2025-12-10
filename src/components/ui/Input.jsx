@@ -18,7 +18,7 @@ const Input = ({
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-semibold text-gray-900 dark:text-gray-200 mb-3">
+        <label className="block text-sm font-semibold text-gray-900 dark:text-white mb-3">
           {label}
           {required && <span className="text-red-400 ml-1">*</span>}
         </label>

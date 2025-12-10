@@ -141,7 +141,7 @@ const Login = () => {
       <div className="relative z-10 glass-strong p-8 w-full max-w-md animate-scale-in">
         <Link
           to="/"
-          className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition-colors"
+          className="inline-flex items-center text-gray-300 dark:text-white hover:text-white mb-6 transition-colors"
         >
           <span className="mr-2">←</span>
           <span>Geri</span>

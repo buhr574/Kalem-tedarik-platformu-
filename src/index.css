@@ -573,6 +573,99 @@
   html[data-public-page="true"] h3 {
     @apply text-white !important;
   }
+
+  /* Force white text for labels in dark mode */
+  html[data-theme="dark"] label,
+  html:not([data-theme]) label,
+  html[data-public-page="true"] label {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Force white text for buttons in dark mode */
+  html[data-theme="dark"] button,
+  html:not([data-theme]) button {
+    color: inherit;
+  }
+
+  /* Secondary button dark mode - ensure text is visible */
+  html[data-theme="dark"] .secondary-button-dark,
+  html:not([data-theme]) .secondary-button-dark {
+    color: rgba(255, 255, 255, 1) !important;
+    background: rgba(99, 102, 241, 0.15) !important;
+    border-color: rgba(99, 102, 241, 0.5) !important;
+  }
+
+  html[data-theme="dark"] .secondary-button-dark:hover,
+  html:not([data-theme]) .secondary-button-dark:hover {
+    color: rgba(255, 255, 255, 1) !important;
+    background: rgba(99, 102, 241, 0.25) !important;
+    border-color: rgba(99, 102, 241, 0.7) !important;
+  }
+
+  /* Ghost button dark mode - ensure text is visible */
+  html[data-theme="dark"] .ghost-button-dark,
+  html:not([data-theme]) .ghost-button-dark {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  html[data-theme="dark"] .ghost-button-dark:hover,
+  html:not([data-theme]) .ghost-button-dark:hover {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Fix any text-gray-900 in dark mode to be white */
+  html[data-theme="dark"] .text-gray-900,
+  html:not([data-theme]) .text-gray-900,
+  html[data-public-page="true"] .text-gray-900 {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Fix any text-gray-700 in dark mode to be white */
+  html[data-theme="dark"] .text-gray-700,
+  html:not([data-theme]) .text-gray-700,
+  html[data-public-page="true"] .text-gray-700 {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* Fix any text-gray-200 in dark mode to be white */
+  html[data-theme="dark"] .text-gray-200,
+  html:not([data-theme]) .text-gray-200,
+  html[data-public-page="true"] .text-gray-200 {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Fix any text-gray-300 in dark mode to be white */
+  html[data-theme="dark"] .text-gray-300,
+  html:not([data-theme]) .text-gray-300,
+  html[data-public-page="true"] .text-gray-300 {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  /* Fix any text-gray-400 in dark mode to be white */
+  html[data-theme="dark"] .text-gray-400,
+  html:not([data-theme]) .text-gray-400,
+  html[data-public-page="true"] .text-gray-400 {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* Ensure all links in dark mode are visible */
+  html[data-theme="dark"] a,
+  html:not([data-theme]) a,
+  html[data-public-page="true"] a {
+    color: inherit;
+  }
+
+  html[data-theme="dark"] a[class*="text-gray"],
+  html:not([data-theme]) a[class*="text-gray"],
+  html[data-public-page="true"] a[class*="text-gray"] {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  html[data-theme="dark"] a[class*="text-gray"]:hover,
+  html:not([data-theme]) a[class*="text-gray"]:hover,
+  html[data-public-page="true"] a[class*="text-gray"]:hover {
+    color: rgba(255, 255, 255, 1) !important;
+  }
 }
 
 @layer components {
@@ -831,6 +924,19 @@
 
   .glass-button:hover {
     transform: translateY(-2px) scale(1.05);
+  }
+
+  /* Glass button dark mode - ensure text is always visible */
+  html[data-theme="dark"] .glass-button,
+  html:not([data-theme]) .glass-button,
+  html[data-public-page="true"] .glass-button {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  html[data-theme="dark"] .glass-button:hover,
+  html:not([data-theme]) .glass-button:hover,
+  html[data-public-page="true"] .glass-button:hover {
+    color: rgba(255, 255, 255, 1) !important;
   }
 
   .glass-input {

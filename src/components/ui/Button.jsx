@@ -15,13 +15,13 @@ const Button = ({
     primary:
       "bg-blue-600 dark:bg-blue-600 text-white dark:text-white hover:bg-blue-700 dark:hover:bg-blue-700 shadow-lg hover:shadow-xl border border-blue-500/30 dark:border-blue-500/30",
     secondary:
-      "glass-button text-gray-900 dark:text-white border border-white/20 dark:border-white/20 border-gray-300/40 dark:border-white/20 hover:border-white/30 dark:hover:border-white/30 hover:border-blue-500/50 dark:hover:border-white/30",
+      "glass-button secondary-button-dark text-gray-900 dark:text-white border border-white/20 dark:border-blue-500/50 border-gray-300/40 dark:border-blue-500/50 hover:border-white/30 dark:hover:border-blue-500/70 hover:border-blue-500/50 dark:hover:border-blue-500/70",
     danger:
       "bg-red-600 dark:bg-red-600 text-white dark:text-white hover:bg-red-700 dark:hover:bg-red-700 shadow-lg hover:shadow-xl border border-red-500/30 dark:border-red-500/30",
     success:
       "bg-green-600 dark:bg-green-600 text-white dark:text-white hover:bg-green-700 dark:hover:bg-green-700 shadow-lg hover:shadow-xl border border-green-500/30 dark:border-green-500/30",
     ghost:
-      "text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-white/5 dark:hover:bg-white/5",
+      "ghost-button-dark text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-white hover:bg-white/5 dark:hover:bg-white/10",
   };
 
   const sizes = {
